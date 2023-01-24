@@ -17,6 +17,7 @@ app.get('/sounds/:id', (req, res) => res.sendFile(`${__dirname}/sounds/${req.par
 const resolvers = {
   Query: {
     pokemons: (__, args) => {
+      console.log('ARGS => ', args)
       const { limit, offset, search, filter } = args.query;
       let pokemons = pokemonsData;
 
